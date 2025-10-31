@@ -7,6 +7,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const range = document.getElementById("disponibilidade");
     const output = document.getElementById("disponibilidade-output");
 
+    // ====================================
+    // Menu mobile - Hamburger
+    // ====================================
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainMenu = document.getElementById('main-menu');
+    
+    if (menuToggle && mainMenu) {
+        menuToggle.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            mainMenu.classList.toggle('active');
+        });
+    }
+
     if (cpf) {
         cpf.addEventListener("input", () => {
             cpf.value = cpf.value
