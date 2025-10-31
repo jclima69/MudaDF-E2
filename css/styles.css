@@ -986,6 +986,53 @@ footer {
 }
 
 /* ========================================
+   DROPDOWN MENU (NOVO)
+   ======================================== */
+/* O item pai precisa de position: relative para ancorar o submenu */
+nav ul li {
+    position: relative; 
+}
+
+/* Estilos do Submenu (Dropdown) */
+nav ul ul {
+    display: none; /* Esconde por padrão */
+    position: absolute;
+    top: 100%; /* Posiciona abaixo do item pai */
+    left: 0;
+    min-width: 200px; /* Largura mínima do dropdown */
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    border-radius: 5px;
+    padding: 0.5rem 0;
+    z-index: 1001; /* Garante que fique acima do cabeçalho fixo */
+    flex-direction: column; /* Força os itens a serem verticais */
+}
+
+/* Visibilidade do Dropdown (Desktop) */
+nav ul li:hover > ul {
+    display: flex; /* Mostra o submenu no hover */
+}
+
+/* Estilos dos links e itens internos do submenu */
+nav ul ul li {
+    padding: 0; /* Remove padding extra do item principal */
+    /* Garante que o item seja vertical mesmo se o UL pai for flex */
+    width: 100%; 
+}
+
+nav ul ul a {
+    padding: 0.75rem 1.5rem; 
+    display: block;
+    white-space: nowrap; /* Evita quebra de linha em títulos longos */
+    color: var(--text-dark); /* Cor de texto padrão */
+}
+
+nav ul ul a:hover {
+    background-color: var(--bg-light); /* Destaque no hover */
+    color: var(--primary-color);
+}
+
+/* ========================================
    RESPONSIVE DESIGN
    ======================================== */
 @media (max-width: 768px) {
@@ -1065,4 +1112,24 @@ footer {
     .btn {
         width: 100%;
     }
+
+/* Submenu em Mobile:
+       - Retorna para position: static para fluir dentro da lista vertical.
+       - Usa uma cor de fundo clara para se distinguir do menu principal.
+       - A visibilidade será controlada por uma classe (ex: .dropdown-active) via JavaScript,
+         pois o evento :hover não funciona bem em touch. */
+    nav ul ul {
+        position: static;
+        box-shadow: none;
+        background-color: var(--bg-light); /* Fundo diferente para distinguir */
+        min-width: 100%;
+        border-radius: 0;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Classe de ativação (usada pelo JavaScript) */
+    nav ul li.dropdown-active > ul {
+        display: flex; 
+    }
+
 }
