@@ -11,7 +11,7 @@ Desenvolver uma plataforma web completa que permita às ONGs gerenciar projetos,
 
 ## 📂 Estrutura
 ```
-MudaDF-E1/
+MudaDF-E2/
 ├── index.html
 ├── projetos.html
 ├── cadastro.html
