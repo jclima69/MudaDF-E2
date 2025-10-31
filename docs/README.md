@@ -32,7 +32,7 @@ MudaDF-E1/
 3. Navegue pelas páginas do site.
 
 ## 🌐 Publicação no GitHub Pages
-https://jclima69.github.io/MudaDF-E1/
+https://jclima69.github.io/MudaDF-E2/
 
 ## 📧 Contato
 Projeto desenvolvido por Jaime Lima.
